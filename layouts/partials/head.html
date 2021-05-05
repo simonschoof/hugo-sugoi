@@ -11,7 +11,7 @@
 
 {{ $css := "css/normalize.css" | absURL }}
 <link rel="stylesheet" href="{{ $css }}">
-{{ $css := "css/skeleton.css" | absURL }}
+{{ $css := "css/barebones.css" | absURL }}
 <link rel="stylesheet" href="{{ $css }}">
 {{ $css := "css/custom.css" | absURL }}
 <link rel="stylesheet" href="{{ $css }}">
@@ -20,8 +20,4 @@
 
 {{ if .Site.Params.favicon }}
 <link rel="shortcut icon" href="/{{ .Site.Params.favicon }}" type="image/png" />
-{{ end }}
-
-{{ if .Site.GoogleAnalytics }}
-{{ template "_internal/google_analytics.html" . }}
 {{ end }}
