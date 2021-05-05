@@ -223,7 +223,7 @@ nav ul li>a:only-child::after {
 }
 
 .main {
-  background: #ffffff;
+  background: var(--background-color);;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: auto;
@@ -314,4 +314,10 @@ footer a {
 
 footer a:hover {
   color: #0FA0CE;
+}
+
+.toggleThemeButton {
+    position: fixed;
+    bottom: 0px;
+    right: 0px; 
 }
