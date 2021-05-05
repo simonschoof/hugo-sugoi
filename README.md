@@ -30,7 +30,7 @@ Also supports Hugo internal templates for
 
 Inside the folder of your Hugo site run:
 ```
-$ git submodule add https://github.com/aanupam23/hugo-sugoi.git themes/hugo-sugoi
+$ git submodule add https://github.com/simonschoof/hugo-sugoi.git themes/hugo-sugoi
 ```
 
 ### Licence
