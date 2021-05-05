@@ -34,10 +34,11 @@ $ git submodule add https://github.com/simonschoof/hugo-sugoi.git themes/hugo-su
 ```
 
 ### Licence
-[![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/aanupam23/hugo-sugoi/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/simonschoof/hugo-sugoi/blob/master/LICENSE)
 
 ### Acknowledgements
 - [Skeleton](https://github.com/dhg/Skeleton/)
 - [Hugo Templates](https://gohugo.io/templates)
 - [Lorem Markdownum](https://jaspervdj.be/lorem-markdownum/)
 - [Hugo Ananke](https://github.com/budparr/gohugo-theme-ananke)
+- [Hugo Sugoi](https://github.com/aanupam23/hugo-sugoi)

@@ -3,13 +3,13 @@
 
 name = "Sugoi"
 license = "MIT"
-licenselink = "https://github.com/aanupam23/hugo-sugoi/blob/master/LICENSE"
+licenselink = "https://github.com/simonschoof/hugo-sugoi/blob/master/LICENSE"
 description = "Hugo-Sugoi is ultra minimal theme built for personal blogs and can be used for learning hugo theme designing. Use this theme for creating an awesome theme."
-homepage = "https://github.com/aanupam23/hugo-sugoi"
+homepage = "https://github.com/simonschoof/hugo-sugoi"
 tags = ["responsive", "Minimal", "blog", "modern", "clean","customizable"]
 features = ["responsive", "blog", "modern", "clean","customizable"]
 min_version = "0.41.0"
 
 [author]
-  name = "aanupam23"
-  homepage = "https://github.com/aanupam23/"
+  name = "Simon Schoof"
+  homepage = "https://simonschoof.com"
