@@ -317,6 +317,7 @@ pre.code-example {
     border-bottom-color: var(--accent-color); }
 }
 
+/* ---- Sugoi theme custom css ---- */
 a {
   color: #111;
   text-decoration: none;
@@ -635,8 +636,21 @@ footer a:hover {
   color: #0FA0CE;
 }
 
-.toggleThemeButton {
-    position: fixed;
-    bottom: 0px;
-    right: 0px; 
+.toggle-theme-btn {
+  padding: none;
+  border: none;
+  background: none;
+}
+
+.toggle-theme-svg {
+  width: 24px;
+  height: 24px
+}
+
+.toggle-theme-btn-overlay-wrap {
+  position: relative;
+}
+
+.dark-theme-span, .light-theme-span{
+  position: absolute;
 }
