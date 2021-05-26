@@ -1,4 +1,5 @@
-<div class="section hero" style="background-image: url('{{ .Site.Params.herobackgroundimage}}');">
+{{ $image := .Site.Params.herobackgroundimage | absURL }}
+<div class="section hero" style="background-image: url('{{ $image }}');">
     <div class="container">
       <h3 class="section-heading">{{ .Site.Params.herotitle}}</h3>
       <a class="button button-primary" href="{{ .Site.Params.herolink}}">{{ .Site.Params.herolinktext}}</a>

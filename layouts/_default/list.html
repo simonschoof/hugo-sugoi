@@ -1,6 +1,7 @@
 {{ define "main" }}
 
-<div class="section hero">
+{{ $image := .Site.Params.herobackgroundimage | absURL }}
+<div class="section hero" style="background-image: url('{{ $image }}');">
   <div class="container">
     <div class="row">
       <h1>{{ .Title }}</h1>
