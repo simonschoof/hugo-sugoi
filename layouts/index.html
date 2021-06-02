@@ -5,13 +5,13 @@
 <div class="section main">
   <div class="row content">
     <article>
-      {{ range first 6 (where .Site.RegularPages "Type" "post" )}}
+      {{ range first 5 (where .Site.RegularPages "Type" "post" )}}
       {{ if gt .ReadingTime 1 }}
       {{ .Scratch.Set "readingTime" "minutes" }}
       {{ else }}
       {{ .Scratch.Set "readingTime" "minute" }}
       {{ end }}
-      <div id="" class="grid-container halves">
+      <div class="grid-container halves">
         <div class="halves left" > <i class="far fa-calendar"></i> {{.Date.Format "2006-01-02"}}</div>
         <div class="halves" style="text-align: right;"> <i class="far fa-clock"></i> Reading Time: {{ .ReadingTime }}
           {{ .Scratch.Get "readingTime" }}</div>
@@ -35,6 +35,13 @@
       </div>
       <hr> 
     {{ end }}
+    <div class="grid-container thirds">
+    <div class="thirds"></div>
+    <div class="thirds">
+      <a class="button" href="{{ "/posts/" | relLangURL}}">All Posts</a>
+    </div>
+    </div>
+    <div class="thirds"></div>
   </article>
   </div>
 </div>
