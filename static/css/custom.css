@@ -76,7 +76,10 @@ html.transition-theme *:after {
 @media (min-width: 600px) {
 	.halves.left {
     text-align: left;
-	}
+  }
+  .halves.right {
+    text-align: right;
+  }
 }
 
 /* tag links */

@@ -9,37 +9,37 @@
   </div>
 </div>
 
-<div class="section">
-  <div class="container">
+<div class="section main">
+  <div class="row content">
     <div class="row">
       {{ $paginator := .Paginate (where .Site.RegularPages "Type" "post") }}
       {{ range $paginator.Pages }}
       <div class="grid-container halves">
         <div class="halves left"> <i class="far fa-calendar"></i> {{.Date.Format "2006-01-02"}}</div>
-        <div class="halves"> <i class="far fa-clock"></i> Reading Time: {{ .ReadingTime }}
+        <div class="halves right"> <i class="far fa-clock"></i> Reading Time: {{ .ReadingTime }}
           {{ .Scratch.Get "readingTime" }}</div>
       </div>
-      <h4>
+      <h5>
         <a href="{{ .Permalink }}" class="h5 d-block my-3">{{ .Title | markdownify }}</a>
-      </h4>
+      </h5>
+      <div>
+        <span class="tag">
+          {{ range .Params.Tags }}
+          <a href="{{ "/tags/" | relLangURL}}{{ . | urlize }}">
+            #{{.}}
+          </a>
+        {{ end }}
+        </span>
+        </div>
       <p class="card-text">{{ .Summary }}</p>
       <div class="grid-container halves">
         <div class="halves left"><a class="button" href="{{ .Permalink }}">Read More</a></div>
-        <div class="halves">
-          <div class="u-pull-right"> <i class="{{.Params.Icon}}"></i>
-            <span class="category">
-              {{ range .Params.Categories }}
-              <a href="{{ "/categories/" | relLangURL}}{{ . | urlize }}">
-                {{.}}
-              </a>
-            </span>
-            {{ end }}
-          </div>
-        </div>
+        <div class="halves"></div>
       </div>
+      <hr>
       {{ end }}
     </div>
-    <hr>
+    {{ partial "pagination.html" . }}
   </div>
 </div>
 

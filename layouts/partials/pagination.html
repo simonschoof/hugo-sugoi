@@ -1,0 +1,27 @@
+{{ $paginator := .Paginator }}   
+{{ if (and ($paginator.HasNext) ($paginator.HasPrev)) }}
+<div class="grid-container halves">
+    <div class="halves right">
+        <a class="button" href="{{ $paginator.Prev.URL }}">Newer Posts</a>
+      </div>
+      <div class="halves left">
+        <a class="button" href="{{ $paginator.Next.URL }}">Older Posts</a>
+      </div>
+</div>
+{{ else if ($paginator.HasNext) }}
+<div class="grid-container thirds">
+    <div class="thirds"></div>
+    <div class="thirds">
+      <a class="button" href="{{ $paginator.Next.URL }}">Older Posts</a>
+    </div>
+    </div>
+    <div class="thirds"></div>
+{{ else if ($paginator.HasPrev) }}
+<div class="grid-container thirds">
+    <div class="thirds"></div>
+    <div class="thirds">
+      <a class="button" href="{{ $paginator.Prev.URL }}">Newer Posts</a>
+    </div>
+    </div>
+    <div class="thirds"></div>
+{{ end }}
