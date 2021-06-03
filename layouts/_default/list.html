@@ -14,6 +14,7 @@
     <div class="row">
       {{ $paginator := .Paginate (where .Site.RegularPages "Type" "post") }}
       {{ range $paginator.Pages }}
+      {{ partial "readingtime.html" . }}
       <div class="grid-container halves">
         <div class="halves left"> <i class="far fa-calendar"></i> {{.Date.Format "2006-01-02"}}</div>
         <div class="halves right"> <i class="far fa-clock"></i> Reading Time: {{ .ReadingTime }}

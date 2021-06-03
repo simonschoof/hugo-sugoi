@@ -6,11 +6,7 @@
   <div class="row content">
     <article>
       {{ range first 3 (where .Site.RegularPages "Type" "post" )}}
-      {{ if gt .ReadingTime 1 }}
-      {{ .Scratch.Set "readingTime" "minutes" }}
-      {{ else }}
-      {{ .Scratch.Set "readingTime" "minute" }}
-      {{ end }}
+      {{ partial "readingtime.html" . }}
       <div class="grid-container halves">
         <div class="halves left"> <i class="far fa-calendar"></i> {{.Date.Format "2006-01-02"}}</div>
         <div class="halves right"> <i class="far fa-clock"></i> Reading Time: {{ .ReadingTime }}
