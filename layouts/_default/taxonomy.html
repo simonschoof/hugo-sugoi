@@ -1,0 +1,48 @@
+{{ define "main" }}
+
+{{ $image := .Site.Params.herobackgroundimage | absURL }}
+<div class="section hero" style="background-image: url('{{ $image }}');">
+  <div class="container">
+    <div class="row">
+      <h1>#{{ .Title }}</h1>
+    </div>
+  </div>
+</div>
+
+<div class="section main">
+  <div class="row content">
+    <div class="row">
+      {{ $tag := slice .Title }}
+      {{ $paginator := .Paginate (where .Site.RegularPages "Params.tags" "intersect" $tag) }}
+      {{ range $paginator.Pages }}
+      {{ partial "readingtime.html" . }}
+      <div class="grid-container halves">
+        <div class="halves left"> <i class="far fa-calendar"></i> {{.Date.Format "2006-01-02"}}</div>
+        <div class="halves right"> <i class="far fa-clock"></i> Reading Time: {{ .ReadingTime }}
+          {{ .Scratch.Get "readingTime" }}</div>
+      </div>
+      <h5>
+        <a href="{{ .Permalink }}" class="h5 d-block my-3">{{ .Title | markdownify }}</a>
+      </h5>
+      <div>
+        <span class="tag">
+          {{ range .Params.Tags }}
+          <a href="{{ "/tags/" | relLangURL}}{{ . | urlize }}">
+            #{{.}}
+          </a>
+        {{ end }}
+        </span>
+        </div>
+      <p class="card-text">{{ .Summary }}</p>
+      <div class="grid-container halves">
+        <div class="halves left"><a class="button" href="{{ .Permalink }}">Read More</a></div>
+        <div class="halves"></div>
+      </div>
+      <hr>
+      {{ end }}
+    </div>
+    {{ partial "pagination.html" . }}
+  </div>
+</div>
+
+{{ end }}
