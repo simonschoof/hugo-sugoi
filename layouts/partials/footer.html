@@ -2,5 +2,7 @@
     <span class="copyright">
         {{ with .Site.Copyright | default "&copy;" }} {{ . | safeHTML }} {{ now.Format "2006"}} {{ end }}
         <a href="https://github.com/simonschoof/hugo-sugoi" title="hugo-sugoi" alt="hugo-sugoi" target="_blank">Hugo-Sugoi</a>
+        <a href="{{ "imprint" | absLangURL }}" title="Imprint" alt="Imprint">Imprint</a>
+        <a href="{{ "privacy" | absLangURL }}" title="Privacy" alt="Privacy">Privacy</a>
     </span>
 </footer>
