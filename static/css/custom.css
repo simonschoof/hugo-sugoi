@@ -416,13 +416,13 @@ footer {
 }
 
 footer a {
-  color: #fff;
+  color: var(--accent-color);;
   text-decoration: underline;
   font-weight: 500;
 }
 
 footer a:hover {
-  color: #0FA0CE;
+  color: var(--accent-color-hover);;
 }
 
 
@@ -448,6 +448,12 @@ footer a:hover {
 
 .dark-theme-span, .light-theme-span{
   position: absolute;
+}
+
+.emojify {
+	font-family: Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji, Segoe UI Symbol, Android Emoji, EmojiSymbols;
+	font-size: 2rem;
+	vertical-align: middle;
 }
 
 /* ---- General 

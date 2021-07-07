@@ -45,6 +45,6 @@ function setTheme(theme) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    var theme = localStorage.getItem("theme") || "light"
+    var theme = localStorage.getItem("theme") || "dark"
     setTheme(theme);
   });
