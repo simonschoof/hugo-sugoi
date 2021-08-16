@@ -102,6 +102,14 @@ html.transition-theme *:after {
   object-fit: contain;
 }
 
+.figure-about-me figcaption p {
+  text-align: center;
+}
+
+.figure-about-me figcaption p a {
+  target: _blank
+}
+
 /* ---- Sugoi theme custom css ---- */
 /* -------------------------------- */
 a {
