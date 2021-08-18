@@ -380,13 +380,13 @@ nav ul li>a:only-child::after {
   display: flex;
   justify-content: center;
   text-align: center;
-  background-image: url("/images/hero_background_hafen.webp"); 
+  background-image: url("../images/hero_background_hafen.webp"); 
 }
 
 /* Larger than desktop */
 @media (min-width: 1024px) {
   .hero {
-    background-image: url("/images/hero_background_hafen_large.webp");
+    background-image: url("../images/hero_background_hafen_large.webp");
     min-height: 250px;
   }
 }
