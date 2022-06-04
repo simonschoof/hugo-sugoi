@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="section hero">
     <div class="container">
-        <h1 class="section-heading">{{ .Title }}</h1>
+        <h1 class="section-heading section-sized-heading">{{ .Title }}</h1>
         {{ partial "readingtime.html" . }}
         <i class="far fa-calendar"></i> {{.Date.Format "2006-01-02"}},
         <i class="far fa-clock"></i> Reading Time: {{ .ReadingTime }} {{ .Scratch.Get "readingTime" }}
