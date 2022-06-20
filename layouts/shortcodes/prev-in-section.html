@@ -1,0 +1,4 @@
+{{ $next_text := .Get 0 }}
+{{if .Page.PrevInSection}}
+<a href="{{ .Page.PrevInSection.Permalink }}">{{ $next_text }}</a>
+{{end}}
