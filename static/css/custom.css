@@ -103,9 +103,9 @@ a.footnote-ref::after {
 
 .figure-about-me img {
   display: block;
-  width: 100%;
+  width: 50%;
   margin: 0.7rem auto;
-  max-height: 850px;
+  max-height: 500px;
   object-fit: contain;
 }
 
@@ -119,9 +119,9 @@ a.footnote-ref::after {
 
 img {
   display: block;
-  width: 50%;
+  width: 100%;
   margin: 0.7rem auto;
-  max-height: 500px;
+  max-height: 850px;
   object-fit: contain;
 }
 
