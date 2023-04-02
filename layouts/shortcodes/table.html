@@ -1,0 +1,6 @@
+{{ $htmlTable := .Inner | markdownify }}
+<div align="center">
+    <div class="table-wrapper">
+        {{ $htmlTable | safeHTML }}
+    </div>
+</div>
