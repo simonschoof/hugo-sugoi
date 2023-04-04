@@ -1,6 +1,31 @@
-{{ $htmlTable := .Inner | markdownify }}
+{{- $tableWidth := .Get "tableWidth" | default "100%" -}}
+{{- $colWidths := .Get "colWidths" | default "" -}}
+
+{{- $tableStyle := "" -}}
+{{- if $tableWidth -}}
+  {{- $tableStyle = printf "width: %s;" $tableWidth -}}
+{{- end -}}
+
+{{- $table := printf "<table style='%s'>" $tableStyle -}}
+{{- $table = printf "%s<thead>" $table -}}
+{{- $table = printf "%s<tr>" $table -}}
+{{- $colCount := 0 -}}
+{{- range $i, $h := (index .Page.Params "headers") -}}
+  {{- $colCount = add $colCount 1 -}}
+  {{- $colWidth := "" -}}
+  {{- if and $colWidths (ge (len $colWidths) $colCount) -}}
+    {{- $colWidth = printf "width: %s;" (index $colWidths (sub $colCount 1)) -}}
+  {{- end -}}
+  {{- $table = printf "%s<th style='%s'>%s</th>" $table $colWidth $h -}}
+{{- end -}}
+{{- $table = printf "%s</tr></thead>" $table -}}
+{{- $table = printf "%s<tbody>" $table -}}
+{{- $tableContent := .Inner | markdownify -}}
+{{- $tableContent = replace $tableContent "<table" "<table style='table-layout:fixed;width:100%'" -}}
+{{- $tableContent = replace $tableContent "<td" "<td style='word-wrap:break-word'" -}}
+{{- $table = printf "%s%s" $table $tableContent -}}
+{{- $table = printf "%s</tbody></table>" $table -}}
+{{- $tableWrapper := printf "<div style='width:%s'><div class='table-wrapper'>%s</div></div>" $tableWidth $table -}}
 <div align="center">
-    <div class="table-wrapper">
-        {{ $htmlTable | safeHTML }}
-    </div>
+        {{ $tableWrapper | safeHTML }}
 </div>
