@@ -1,0 +1,7 @@
+{{ $refNumber := .Get 0 }}
+{{ $author := .Get 1 }}
+{{ $text := .Get 2 }}
+{{ $refName := .Get 3 }}
+{{ $url := index .Page.Params.references $refName }}
+
+<span id="ref-{{ $refNumber }}">[{{ $refNumber }}]</span>{{ if $author }}: {{ $author }}{{ end }}{{ if $text }}, "{{ $text }}"{{ end }}{{ if $url }}. <a href="{{ $url }}">{{ $url }}</a>{{ end }}
