@@ -2,6 +2,7 @@
 {{ $author := .Get 1 }}
 {{ $text := .Get 2 }}
 {{ $refName := .Get 3 }}
-{{ $url := index .Page.Params.references $refName }}
+{{ $references := .Page.Params.references }}
+{{ $reference := (index (where $references "name" $refName) 0) }}
 
-<span id="ref-{{ $refNumber }}">[{{ $refNumber }}]</span>{{ if $author }}: {{ $author }}{{ end }}{{ if $text }}, "{{ $text }}"{{ end }}{{ if $url }}. <a href="{{ $url }}">{{ $url }}</a>{{ end }}
+<span id="ref-{{ $refNumber }}">[{{ $refNumber }}]</span>{{ if $author }}: {{ $author }}{{ end }}{{ if $text }}, "{{ $text }}"{{ end }}{{ if $reference }}. <a href="{{ $reference.url }}">{{ $reference.url }}</a>{{ end }}

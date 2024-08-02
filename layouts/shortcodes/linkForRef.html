@@ -1,4 +1,10 @@
 {{ $refName := .Get 0 }}
 {{ $linkText := .Get 1 }}
-{{ $url := index .Page.Params.references $refName }}
-<a href="{{ $url }}">{{ $linkText }}</a>
+{{ $references := .Page.Params.references }}
+{{ $reference := (index (where $references "name" $refName) 0) }}
+
+{{ if $reference }}
+<a href="{{ $reference.url }}">{{ $linkText }}</a>
+{{ else }}
+<span>{{ $linkText }}</span>
+{{ end }}
