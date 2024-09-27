@@ -1,13 +1,19 @@
-{{ $series_name := .Get 0 | urlize }}
+{{ $series_name := .Get 0 }}
+{{ $all_series := .Site.Taxonomies.series }}
+{{ $series := "" }}
 
-{{ range $key, $taxonomy := .Site.Taxonomies.series }}
-    {{ if eq $key $series_name }}
-    <ul>
-        {{ range $taxonomy.Pages.ByDate }}
-        <li hugo-nav="{{ .RelPermalink }}">
-            <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
-        </li>
-        {{ end }}
-    </ul>
+{{ range $key, $value := $all_series }}
+  {{ if eq $key $series_name }}
+    {{ $series = $value }}
+  {{ end }}
+{{ end }}
+
+{{ if $series }}
+  <ul>
+    {{ range sort $series "Page.Date" "asc" }}
+      <li hugo-nav="{{ .Page.RelPermalink }}">
+        <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+      </li>
     {{ end }}
+  </ul>
 {{ end }}
