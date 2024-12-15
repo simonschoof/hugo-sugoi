@@ -1,0 +1,27 @@
+{{ $headings := .Page.Fragments.Headings }}
+
+{{ define "renderHeadings" }}
+  {{- $headings := . -}}
+  {{- if $headings -}}
+    <ul>
+      {{- range $headings -}}
+        {{- if ne .Title "" -}}
+        <li>
+          <a href="#{{ .ID }}">{{ .Title }}</a>
+          {{- if .Headings -}}
+            {{ template "renderHeadings" .Headings }}
+          {{- end -}}
+        </li>
+        {{- else -}}
+          {{ template "renderHeadings" .Headings }}
+        {{- end -}}
+      {{- end -}}
+    </ul>
+  {{- end -}}
+{{ end }}
+
+{{ if $headings }}
+  <div class="custom-toc">
+    {{ template "renderHeadings" $headings }}
+  </div>
+{{ end }}
