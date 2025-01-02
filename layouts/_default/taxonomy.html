@@ -11,7 +11,7 @@
 <div class="section main">
   <div class="row content">
     <div class="row">
-      {{ $tag := slice .Title }}
+      {{ $tag := slice (lower .Title) }}
       {{ $paginator := .Paginate (where .Site.RegularPages "Params.tags" "intersect" $tag) }}
       {{ range $paginator.Pages }}
       {{ partial "readingtime.html" . }}
